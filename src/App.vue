@@ -2,7 +2,7 @@
   <h1>DC Heroes</h1>
   <ul>
     <li  v-for="(hero, index) in dcHeroes" v-bind:key="index">{{ index }} : {{hero.name}}</li>
-    <input type="text" v-model.lazy="newHero"> <!--Make newHero model -->
+    <input type="text" v-model.number="newHero"> <!--Make newHero model -->
     <button>Add Hero</button>
   </ul>
 </template>
