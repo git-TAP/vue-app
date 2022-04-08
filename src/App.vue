@@ -1,26 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 v-if="isShowing" v-html="title"></h1>
+  <h2 v-else-if="isShowing == null">This is v-else-if part</h2>
+  <h3 v-else>This is v-else part</h3>
+  
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default{
+    data(){    
+      return{
+        title:"<h1>This is the Title inside the H1 tag</h1>",
+        isShowing: false,
+      }
+    }
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
