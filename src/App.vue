@@ -1,9 +1,9 @@
 <template>
   <h1>DC Heroes</h1>
   <ul>
-    <li  v-for="(hero, index) in dcHeroes" :key="index">{{ index }} : {{hero.name}}</li>
-    <input type="text" :[attribute]="newHero">
-    <button :disabled="isDisabled">Add Hero</button>
+    <li  v-for="(hero, index) in dcHeroes" v-bind:key="index">{{ index }} : {{hero.name}}</li>
+    <input type="text" v-model.lazy="newHero"> <!--Make newHero model -->
+    <button>Add Hero</button>
   </ul>
 </template>
 
@@ -12,9 +12,7 @@
   export default{
     data(){    
       return{
-       attribute:"value",
-       isDisabled: true,
-       newHero:'Aquaman',
+       newHero:"Aquaman",
        dcHeroes: [
          {name:'Chocolate'},
          {name:'Factory'},
