@@ -3,9 +3,9 @@
   <ul>
     <li  v-for="(hero, index) in dcHeroes" v-bind:key="index">{{ index }} : {{hero.name}}</li>
   </ul>
-  <form action="" @submit.prevent="dcHeroes.push({name:newHero}); newHero =''">
+  <form action="" @submit.prevent="addHero">
      <input type="text" v-model="newHero" placeholder="Type your name here"> <!--Make newHero model -->
-     <button type="submit">Add Hero</button>
+     <button type="submit" @disabled="disabled == 1" >Add Hero</button>
 
   </form>
 </template>
@@ -14,6 +14,15 @@
 <script>
 "use strict";
   export default{
+    methods:{
+      addHero() {
+        if(this.newHero != ""){
+          this.dcHeroes.push({name:this.newHero});
+          this.newHero = "";
+        }
+        
+      },
+    },
 
     data(){    
       return{
