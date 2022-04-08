@@ -3,7 +3,7 @@
   <ul>
     <li  v-for="(hero, index) in dcHeroes" v-bind:key="index">{{ index }} : {{hero.name}}</li>
     <input type="text" v-model.number="newHero"> <!--Make newHero model -->
-    <button>Add Hero</button>
+    <button v-on:click="newHero = 'Wonder Woman'">Add Hero</button>
   </ul>
 </template>
 
