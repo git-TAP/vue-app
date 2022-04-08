@@ -1,6 +1,8 @@
 <template>
-  <h1  v-text="count"></h1>  
-  <span>Count is: {{count}}</span>
+  <h1 v-once>
+    <span>Count is: {{count}}</span>
+  </h1>  
+  
 </template>
 
 
