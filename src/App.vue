@@ -2,14 +2,19 @@
   <h1>DC Heroes</h1>
   <ul>
     <li  v-for="(hero, index) in dcHeroes" v-bind:key="index">{{ index }} : {{hero.name}}</li>
-    <input type="text" v-model.number="newHero"> <!--Make newHero model -->
-    <button @click="newHero = 'Wonder Woman'">Add Hero</button>
   </ul>
+  <form action="" @submit.prevent="dcHeroes.push({name:newHero}); newHero =''">
+     <input type="text" v-model="newHero" placeholder="Type your name here"> <!--Make newHero model -->
+     <button type="submit">Add Hero</button>
+
+  </form>
 </template>
 
 
 <script>
+"use strict";
   export default{
+
     data(){    
       return{
        newHero:"Aquaman",
