@@ -2,7 +2,7 @@
   <h1>DC Heroes</h1>
   <ul>
     <li  v-for="(hero, index) in dcHeroes" :key="index">{{ index }} : {{hero.name}}</li>
-    <input type="text" :value="newHero">
+    <input type="text" :[attribute]="newHero">
     <button :disabled="isDisabled">Add Hero</button>
   </ul>
 </template>
@@ -12,6 +12,7 @@
   export default{
     data(){    
       return{
+       attribute:"value",
        isDisabled: true,
        newHero:'Aquaman',
        dcHeroes: [
