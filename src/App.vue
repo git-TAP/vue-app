@@ -1,8 +1,6 @@
 <template>
-  <h1  v-text="count"></h1>
-  <!-- <h2 v-else-if="isShowing == null">This is v-else-if part</h2>
-  <h3 v-else>This is v-else part</h3> -->
-  
+  <h1  v-text="count"></h1>  
+  <span>Count is: {{count}}</span>
 </template>
 
 
